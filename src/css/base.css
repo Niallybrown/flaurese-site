@@ -1,0 +1,258 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 18px;
+}
+
+html {
+	background: url(../img/site-bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	/* color: #444444; */
+	position: relative;
+	height: calc(100vh - 2rem);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+}
+
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 1000;
+}
+
+.js .loading::before {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-bg);
+}
+
+.js .loading::after {
+	top: 50%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	margin: -30px 0 0 -30px;
+	border-radius: 50%;
+	opacity: 0.4;
+	background: var(--color-link);
+	animation: loaderAnim 0.7s linear infinite alternate forwards;
+}
+
+@keyframes loaderAnim {
+	to {
+		opacity: 1;
+		transform: scale3d(0.5,0.5,1);
+	}
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-link);
+	outline: none;
+}
+
+a:hover {
+	color: #FF81B3 !important;
+	outline: none;
+}
+
+/* Better focus styles from https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+a:focus {
+	/* Provide a fallback style for browsers
+	 that don't support :focus-visible */
+	outline: none;
+	background: lightgrey;
+}
+
+a:focus:not(:focus-visible) {
+	/* Remove the focus indicator on mouse-focus for browsers
+	 that do support :focus-visible */
+	background: transparent;
+}
+
+a:focus-visible {
+	/* Draw a very noticeable focus style for
+	 keyboard-focus on browsers that do support
+	 :focus-visible */
+	outline: 2px solid red;
+	background: transparent;
+}
+
+.content {
+	margin: 32px auto 40vh;
+	max-width: 1200px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-items: center;
+	text-align: center;
+	justify-content: center;
+}
+
+.content__title {
+	width: 100%;
+	grid-column: 1 / span 3;
+	font-size: 11vw;
+	margin: 10vh 0 0;
+	line-height: 0.65;
+}
+
+.content__title-first {
+	display: block;
+	text-transform: uppercase;
+	font-family: forma-djr-deck, sans-serif;
+	font-weight: 500;
+}
+
+.image {
+	/* max-width: 30vw; */
+	margin: 0 1vw;
+	display: grid;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+.image--style-3 {
+	width: 600px;
+	height: 106px;
+	border-radius: 5px;
+}
+
+.image > .image__element,
+.image__wrap {
+	transform-origin: inherit;
+	position: relative;
+	grid-area: 1 / 1 / 2 / 2;
+	width: 100%;
+	height: 100%;
+	will-change: transform;
+	border-radius: inherit;
+}
+
+.image__wrap {
+	overflow: hidden;
+}
+
+.image__element {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+@media screen and (min-width: 53em) {
+	.frame {
+		text-align: left;
+		display: grid;
+		grid-template-columns: 25% 50% 25%;
+		grid-template-areas: 'links title sponsor';
+		justify-content: space-between;
+		align-items: baseline;
+	}
+}
+
+.center {
+	margin: 0 auto;
+	text-align: center;
+}
+
+header {
+	max-width: 640px;
+	width: 100%;
+}
+
+.block {
+	width: 100%;
+}
+
+a, a:visited {
+	color: #FFF;
+	text-decoration: none;
+}
+
+.listNone {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.links li {
+	padding-bottom: 0.6125rem;
+	font-size: 0.8375rem;
+}
+
+.footer-list {
+	position: absolute;
+	bottom: 1rem;
+	left: 0;
+}
+
+.footer-list ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.footer-list .footer-item {
+	margin: 0 1em;
+}
+
+.footer-list .footer-item .link {
+	text-decoration: none;
+	font-size: 11px;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 0.02rem;
+}
+
+.release {
+	position: absolute;
+  top: 50%;
+	left: 70%;
+  transform: translate(-50%, -50%);
+	width: 160px;
+}
+
+.release a {
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 0.8rem;
+	letter-spacing: 0.02rem;
+	text-transform: uppercase;
+}
+
+@media screen and (max-width: 640px) {
+	.image--style-3 {
+		width: 350px;
+		height: 62px;
+	}
+
+	.release {
+		left: 100%;
+		transform: translate(-180px, -50%);
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.image--style-3 {
+		width: 280px;
+		height: 50px;
+	}
+}
