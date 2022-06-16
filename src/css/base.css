@@ -9,6 +9,7 @@
 }
 
 html {
+	height: 100%;
 	background: url(../img/site-bg.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -244,9 +245,18 @@ a, a:visited {
 		height: 62px;
 	}
 
+	.content {
+		margin: 32px auto 70px;
+	}
+
 	.release {
-		left: 100%;
-		transform: translate(-180px, -50%);
+		margin: 0 auto;
+    width: 160px;
+    text-align: center;
+		position: static;
+    transform: none;
+    top: initial;
+    left: initial;
 	}
 }
 
