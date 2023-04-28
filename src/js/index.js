@@ -1,8 +1,16 @@
-import { preloadImages } from './utils';
-import { ImageHover } from './imageHover';
+let sectionIndex = 0;
 
-preloadImages('[data-repetition]').then(() => {
-    document.body.classList.remove('loading');
-    // Initialize the hover effect on the images
-    [...document.querySelectorAll('.image')].forEach(el => new ImageHover(el));
-});
+const logoSection = document.getElementById("logoSection");
+const aboutSection = document.getElementById("aboutSection");
+const servicesSection1 = document.getElementById("servicesSection1");
+const servicesSection2 = document.getElementById("servicesSection2");
+const contactSection = document.getElementById("contactSection");
+
+const sections = [logoSection, aboutSection, servicesSection1, servicesSection2, contactSection];
+
+
+
+document.getElementById("scroll-button").addEventListener("click", () => {
+    sections[sectionIndex + 1].scrollIntoView({behavior: "smooth"});
+    sectionIndex += 1;
+})
