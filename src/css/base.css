@@ -51,12 +51,19 @@ nav {
 	max-width: 640px;
 }
 
+h1 {
+	font-size: 3rem;
+	margin: 0;
+	padding: 1rem 0;
+}
+
 .content {
 	height: 100vh;
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
 	position: relative;
+	max-width: 1080px;
 }
 
 .content > * {
@@ -70,7 +77,11 @@ nav {
 
 .homepage-logo {
 	max-width: 332px;
-	width: 100%;
+	margin-bottom: 1rem;
+}
+
+.about-logo {
+	max-width: 180px;
 	margin-bottom: 1rem;
 }
 
@@ -139,6 +150,25 @@ a, a:visited {
 	cursor: pointer;
   
   border-top: 20px solid #fff;
+}
+
+.white-text {
+	color: #fff;
+}
+
+.flex {
+	display: flex;
+}
+
+.break-word {
+	word-wrap: break-word;
+	hyphens: auto;
+	display: block;
+}
+
+.w450 {
+	max-width: 385px;
+	font-size: 0.93rem;
 }
 
 @media screen and (max-width: 640px) {
