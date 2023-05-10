@@ -45,10 +45,18 @@ ul {
 header {
 	width: 100%;
 	position: absolute;
+	z-index: 1;
 }
 
 nav {
 	max-width: 640px;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	padding: 0;
 }
 
 h1 {
@@ -63,7 +71,7 @@ h1 {
 	display: flex;
 	align-items: center;
 	position: relative;
-	max-width: 1080px;
+	max-width: 1280px;
 }
 
 .content > * {
@@ -73,6 +81,54 @@ h1 {
 .center {
 	margin: 0 auto;
 	text-align: center;
+}
+
+.grid {	
+	display: grid;
+	grid-template-columns: calc(60% - 25px) calc(40% - 25px);
+	grid-column-gap: 50px;
+
+}
+
+.cards-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	column-gap: 80px;
+	row-gap: 80px;
+}
+
+.card-container {
+	display: flex;
+	flex-basis: calc(50% - 40px);
+}
+
+.card-container img {
+	height: auto;
+	max-width: 232px;
+}
+
+.card-image-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card-content {
+	display: flex;
+}
+
+.card-content h3 {
+	font-size: 22px;
+	margin-top: 0;
+}
+
+.card-content p {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	text-align: justify;
+	hyphens: auto;
 }
 
 .homepage-logo {
@@ -142,14 +198,25 @@ a, a:visited {
 	display: flex;
 }
 
+.arrow-wrapper button {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
 .arrow-down {
   width: 0; 
   height: 0; 
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-	cursor: pointer;
-  
   border-top: 20px solid #fff;
+}
+.arrow-up {
+	width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #fff;
 }
 
 .white-text {
@@ -161,14 +228,47 @@ a, a:visited {
 }
 
 .break-word {
-	word-wrap: break-word;
-	hyphens: auto;
-	display: block;
+	-moz-text-align-last: center;
+	text-align-last: center;
 }
 
 .w450 {
 	max-width: 385px;
-	font-size: 0.93rem;
+}
+
+.diamond {
+	width: 0;
+	height: 0;
+	border: 13px solid transparent;
+	border-bottom-color: #595959;
+	position: relative;
+	top: -13px;
+	margin-right: 16px;
+}
+.diamond:after {
+	content: '';
+	position: absolute;
+	left: -13px;
+	top: 13px;
+	width: 0;
+	height: 0;
+	border: 13px solid transparent;
+	border-top-color: #595959;
+}
+
+#servicesSection1 {
+	column-gap: 80px;
+}
+
+#servicesSection1 p.w450 {
+	font-size: 27px;
+	max-width: 444px;	
+	hyphens: auto;
+}
+
+#services-grid {
+	display: grid;
+	row-gap: 80px;
 }
 
 @media screen and (max-width: 640px) {

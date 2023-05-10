@@ -14,6 +14,9 @@ let sectionObjects = sections.map(section => ({
 }))
 
 document.getElementById("scroll-button").addEventListener("click", () => {
+  if(sectionIndex === sections.length - 1) {
+		sections[0].scrollIntoView({behavior: "smooth"});
+	};
 	sections[sectionIndex + 1].scrollIntoView({behavior: "smooth"});
 	sectionIndex += 1;
 });
@@ -23,13 +26,14 @@ function logScroll() {
 	const scrollButton = document.getElementById("scroll-button");
 
 	sectionObjects.forEach((section, index) => {
-		if(scrollY >= section.offsetTop && scrollY < (section.offsetTop + (section.clientHeight / 2))) {
+		if(scrollY >= section.offsetTop && scrollY <= section.offsetTop + section.clientHeight) {
 			sectionIndex = index;
 		}
 		if(sectionIndex === sectionObjects.length - 1) {
-				scrollButton.style.display = "none";
-		} else if(scrollButton.style.display === "none") {
-			scrollButton.style.display = "block";
+			document.getElementById("arrow-icon").className = "arrow-up center";
+		} else {
+			console.log(sectionIndex, "there")
+			document.getElementById("arrow-icon").className = "arrow-down center";
 		}
 	});
 }

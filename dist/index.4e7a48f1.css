@@ -40,11 +40,19 @@ ul {
 
 header {
   width: 100%;
+  z-index: 1;
   position: absolute;
 }
 
 nav {
   max-width: 640px;
+}
+
+nav ul {
+  justify-content: space-between;
+  padding: 0;
+  list-style: none;
+  display: flex;
 }
 
 h1 {
@@ -55,7 +63,7 @@ h1 {
 
 .content {
   height: 100vh;
-  max-width: 1080px;
+  max-width: 1280px;
   align-items: center;
   margin: 0 auto;
   display: flex;
@@ -71,15 +79,50 @@ h1 {
   margin: 0 auto;
 }
 
+.grid {
+  grid-column-gap: 50px;
+  grid-template-columns: calc(60% - 25px) calc(40% - 25px);
+  display: grid;
+}
+
 .cards-wrapper {
   flex-flow: wrap;
+  gap: 80px;
   display: flex;
 }
 
 .card-container {
-  flex-basis: calc(50% - 10px);
-  column-gap: 20px;
+  flex-basis: calc(50% - 40px);
   display: flex;
+}
+
+.card-container img {
+  height: auto;
+  max-width: 232px;
+}
+
+.card-image-wrapper {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.card-content {
+  display: flex;
+}
+
+.card-content h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.card-content p {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 .homepage-logo {
@@ -149,11 +192,24 @@ a, a:visited {
   bottom: 2rem;
 }
 
+.arrow-wrapper button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
 .arrow-down {
   width: 0;
   height: 0;
-  cursor: pointer;
   border-top: 20px solid #fff;
+  border-left: 20px solid #0000;
+  border-right: 20px solid #0000;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-bottom: 20px solid #fff;
   border-left: 20px solid #0000;
   border-right: 20px solid #0000;
 }
@@ -167,15 +223,48 @@ a, a:visited {
 }
 
 .break-word {
-  word-wrap: break-word;
-  -webkit-hyphens: auto;
-  hyphens: auto;
-  display: block;
+  text-align-last: center;
 }
 
 .w450 {
   max-width: 385px;
-  font-size: .93rem;
 }
 
-/*# sourceMappingURL=index.b64a6806.css.map */
+.diamond {
+  width: 0;
+  height: 0;
+  border: 13px solid #0000;
+  border-bottom-color: #595959;
+  margin-right: 16px;
+  position: relative;
+  top: -13px;
+}
+
+.diamond:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 13px solid #0000;
+  border-top-color: #595959;
+  position: absolute;
+  top: 13px;
+  left: -13px;
+}
+
+#servicesSection1 {
+  column-gap: 80px;
+}
+
+#servicesSection1 p.w450 {
+  max-width: 444px;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  font-size: 27px;
+}
+
+#services-grid {
+  row-gap: 80px;
+  display: grid;
+}
+
+/*# sourceMappingURL=index.4e7a48f1.css.map */
